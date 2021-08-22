@@ -2,8 +2,6 @@ import discord
 from os import getenv
 import random
 
-random.seed(0)
-
 client = discord.Client()
 
 @client.event
