@@ -30,6 +30,11 @@ async def on_message(message):
     	response = random.sample(megami, 2)
     	await message.channel.send(response)
         
+    if message.content.startswith('!tatsujin'):
+    	megami_tatsujin = {"ユリナ", "サイネ", "ヒミカ", "トコヨ", "オボロ", "ユキヒ", "シンラ", "ハガネ", "チカゲ", "クルル", "サリヤ", "ライラ"}
+    	response = random.sample(megami_tatsujin, 2)
+    	await message.channel.send(response)        
+        
         
 token = getenv('DISCORD_BOT_TOKEN')
 client.run(token)
