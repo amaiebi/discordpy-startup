@@ -2,6 +2,8 @@ import discord
 from os import getenv
 import random
 
+random.seed(0)
+
 client = discord.Client()
 
 @client.event
@@ -22,6 +24,12 @@ async def on_message(message):
     	number = random. randrange(deckLength)
     	response = deck[number]
     	await message.channel.send(response)
-
+  
+    if message.content.startswith('/megami'):
+    	megami = {"ユリナ", "サイネ", "ヒミカ", "トコヨ"}
+    	response = random.sample(megami, 2)
+    	await message.channel.send(response)        
+        
+        
 token = getenv('DISCORD_BOT_TOKEN')
 client.run(token)
