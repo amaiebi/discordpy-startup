@@ -24,11 +24,12 @@ async def on_message(message):
     	number = random. randrange(deckLength)
     	response = deck[number]
     	await message.channel.send(response)
-  
-    if message.content.startswith('/megami'):
-    	megami = {"ユリナ", "サイネ", "ヒミカ", "トコヨ"}
-    	response = random.sample(megami, 2)
-    	await message.channel.send(response)        
+         
+    async def on_message(message):
+        if "!megami" in message.content:
+        megami = ["ユリナ","サイネ","ヒミカ","トコヨ"]
+        await message.channel.send(random.sample(megami))
+        
         
         
 token = getenv('DISCORD_BOT_TOKEN')
