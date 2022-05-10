@@ -23,7 +23,7 @@ async def on_message(message):
     	response = deck[number]
     	await message.channel.send(response)
          
-    if message.content.startswith('!megami'):
+    if message.content.startswith('!kihon'):
     	megami = {"ユリナ", "サイネ", "ヒミカ", "トコヨ"}
     	response = random.sample(megami, 2)
     	await message.channel.send(response)
